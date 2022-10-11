@@ -9,5 +9,4 @@ RUN wget https://sourceware.org/pub/valgrind/valgrind-3.18.1.tar.bz2 && \
     ./configure && \
     make && \
     make install
-RUN apt install -y vim
-RUN apt install -y tree
+RUN apt install -y vim tree man
