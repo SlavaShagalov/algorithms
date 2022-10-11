@@ -12,7 +12,7 @@ void bubbleSort(int arr[], const size_t size)
             {
                 buff = arr[j - 1];
                 arr[j - 1] = arr[j];
-                arr[j] = buff;
+                arr[j] = buff; 
             }
         }
     }
