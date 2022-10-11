@@ -1,8 +1,8 @@
 #include "bubble_sort.h"
 
-void bubbleSort(int arr[], const int size)
+void bubbleSort(int arr[], const size_t size)
 {
-    int buff = 0;
+    int buff;
  
     for (int i = 0; i < size - 1; i++)
     {
