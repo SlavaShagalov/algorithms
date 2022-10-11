@@ -11,18 +11,22 @@ jobs:
   check:
     runs-on: ubuntu-latest
     # TODO: My docker image
-    container: leshiy1295/gcc_linters
+    container: leshiy1295/gcc_linters_valgrind_cmake_gtest
     steps:
       - uses: actions/checkout@v3
       - run: make check
   build:
     runs-on: ubuntu-latest
-    container: leshiy1295/gcc_linters
+    container: leshiy1295/gcc_linters_valgrind_cmake_gtest
     needs: [check]
     steps:
     - uses: actions/checkout@v3
+    - name: PWD
+      run: pwd
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{github.workspace}}/build -D CMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+    - name: PWD
+      run: pwd
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
     # - name: Upload artifacts # ?
@@ -31,7 +35,7 @@ jobs:
         # path: main.out
   # test:
   #   runs-on: ubuntu-latest
-  #   container: leshiy1295/gcc_linters
+  #   container: leshiy1295/gcc_linters_valgrind_cmake_gtest
   #   needs: [build]
   #   steps:
   #     - uses: actions/checkout@v2 
