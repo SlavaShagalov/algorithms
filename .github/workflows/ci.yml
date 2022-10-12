@@ -30,8 +30,7 @@ jobs:
       # with: # ?
         # path: main.out
     - name: Test
-      working-directory: ${{github.workspace}}/build
-      run: ./Tests/test
+      run: ${{github.workspace}}/build/Tests/test
   
   # test:
   #   runs-on: ubuntu-latest
