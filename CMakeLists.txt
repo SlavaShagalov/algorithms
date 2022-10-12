@@ -18,7 +18,9 @@ file(GLOB_RECURSE SOURCES main.cpp ${CMAKE_CURRENT_SOURCE_DIR}/Sort/**/*.cpp)
 
 message("Project CMake")
 
-message("SOURCES = ${SOURCES}")
+# message("SOURCES = ${SOURCES}")
+
+include_directories("/root/c-cpp-infrastructure-test/Sort/BubbleSort")
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 

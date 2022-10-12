@@ -1,6 +1,6 @@
 #include "bubble_sort.h"
 
-void bubbleSort(int arr[], const size_t size)
+void bubbleSort(int arr[], const int size)
 {
     int buff;
  
@@ -8,7 +8,7 @@ void bubbleSort(int arr[], const size_t size)
     {
         for (int j = size - 1; j > i; j--) 
         {
-            if (arr[j] < arr[j - 1])
+            if (arr[j] < arr[j - 1]) 
             {
                 buff = arr[j - 1];
                 arr[j - 1] = arr[j];

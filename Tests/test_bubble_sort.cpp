@@ -1,13 +1,23 @@
 #include <gtest/gtest.h>
 
-#include "Sort/BubbleSort/bubble_sort.h"
+#include "bubble_sort.h"
 
 TEST(BubbleSort, EmptyArray) {
-    EXPECT_EQ(1, 1);
-    // EXPECT_EQ(1, fib(2));
+    const int size = 0;
+    int *arr = nullptr;
+
+    bubbleSort(arr, size);
+
+    EXPECT_EQ(arr, nullptr);
 }
 
 TEST(BubbleSort, SomeRandomElements) {
-    // EXPECT_EQ(55, fib(10));
-    EXPECT_EQ(1, 1); 
+    const int size = 3;
+    int arr[size] = {-13, 20, 11};
+
+    bubbleSort(arr, size);
+
+    EXPECT_EQ(arr[0], -13);
+    EXPECT_EQ(arr[1],  11);
+    EXPECT_EQ(arr[2],  20);
 }
