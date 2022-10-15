@@ -1,7 +1,7 @@
 #ifndef BIT_OPERATION_HPP
 #define BIT_OPERATION_HPP
 
-#include <cstddef>
+#include <cstdint>
 
 bool getBit(uint32_t num, uint8_t index);
 

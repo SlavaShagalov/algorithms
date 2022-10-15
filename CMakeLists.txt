@@ -5,29 +5,31 @@ option(USE_SOME_OPTION "Some option" ON)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -coverage -lgcov" )
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -coverage -lgcov")
 
 configure_file(algorithmsConfig.h.in algorithmsConfig.h)
 
+add_subdirectory(Bit)
 add_subdirectory(Sort)
 
-file(GLOB_RECURSE SOURCES main.cpp ${CMAKE_CURRENT_SOURCE_DIR}/Sort/**/*.cpp)
-
-# message("SOURCES = ${SOURCES}")
-# message("SORT_INC_DIRS = ${SORT_INC_DIRS}")
-
 message("Project CMake")
+file(GLOB_RECURSE SOURCES
+        main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Sort/**/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Bit/**/*.cpp
+        )
 
-# message("SOURCES = ${SOURCES}")
+message("SOURCES = ${SOURCES}")
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_include_directories(${PROJECT_NAME} PUBLIC
-                           ${PROJECT_BINARY_DIR}
-                           ${Sort_INCLUDE_DIRS}
-                           )
+        ${PROJECT_BINARY_DIR}
+        ${Sort_INCLUDE_DIRS}
+        ${Bit_INCLUDE_DIRS}
+        )
 
-add_subdirectory(Tests)                        
+add_subdirectory(Tests)
 
 
 # Do from project dir

@@ -2,7 +2,7 @@
 
 #include "algorithmsConfig.h"
 
-#include "bubble_sort.h"
+#include "bubble_sort.hpp"
 
 int main(int argc, char* argv[]) {
     // printf("F10 = %d\n", fib(10));

@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "bubble_sort.h"
+#include "bubble_sort.hpp"
 
 TEST(BubbleSort, EmptyArray) {
     const int size = 0;
