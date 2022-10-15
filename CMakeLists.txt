@@ -20,8 +20,6 @@ message("Project CMake")
 
 # message("SOURCES = ${SOURCES}")
 
-include_directories("/root/c-cpp-infrastructure-test/Sort/BubbleSort")
-
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_include_directories(${PROJECT_NAME} PUBLIC
