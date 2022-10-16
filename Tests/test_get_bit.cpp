@@ -8,7 +8,7 @@ TEST(GetBit, Bit0) {
 
     bool value = getBit(num, index);
 
-    EXPECT_EQ(value, 1);
+    EXPECT_EQ(value, 0);
 }
 
 TEST(GetBit, Bit1) {
@@ -17,5 +17,5 @@ TEST(GetBit, Bit1) {
 
     bool value = getBit(num, index);
 
-    EXPECT_EQ(value, 0);
+    EXPECT_EQ(value, 1);
 }

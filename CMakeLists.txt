@@ -11,12 +11,14 @@ configure_file(algorithmsConfig.h.in algorithmsConfig.h)
 
 add_subdirectory(Bit)
 add_subdirectory(Sort)
+add_subdirectory(Search)
 
 message("Project CMake")
 file(GLOB_RECURSE SOURCES
         main.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Sort/**/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Bit/**/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Search/**/*.cpp
         )
 
 message("SOURCES = ${SOURCES}")
@@ -27,6 +29,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${PROJECT_BINARY_DIR}
         ${Sort_INCLUDE_DIRS}
         ${Bit_INCLUDE_DIRS}
+        ${Search_INCLUDE_DIRS}
         )
 
 add_subdirectory(Tests)
