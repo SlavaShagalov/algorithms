@@ -16,11 +16,13 @@ private:
     void resize();
 
 public:
-    DynamicArray() : _buffer(0), _size(0), _capacity(0) {}
+    DynamicArray() : _buffer(nullptr), _size(0), _capacity(0) {}
 
     DynamicArray(const DynamicArray &other);
 
     DynamicArray(DynamicArray &&other) noexcept;
+
+    explicit DynamicArray(size_t capacity);
 
     ~DynamicArray() { delete[] _buffer; }
 
@@ -78,6 +80,11 @@ void DynamicArray<T>::add(const T &elem) {
         resize();
     assert(_size < _capacity && _buffer != nullptr);
     _buffer[_size++] = elem;
+}
+
+template<typename T>
+DynamicArray<T>::DynamicArray(const size_t capacity) : _size(0), _capacity(capacity)  {
+    _buffer = new T[_capacity];
 }
 
 #endif // DYNAMIC_ARRAY_HPP

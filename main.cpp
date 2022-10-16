@@ -4,6 +4,8 @@
 
 #include "dynamic_array.hpp"
 #include "stack.hpp"
+#include "queue.hpp"
+#include "queue_using_stacks.hpp"
 #include "bubble_sort.hpp"
 
 int main(int argc, char* argv[]) {
