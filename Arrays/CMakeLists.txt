@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(sort)
+project(arrays)
 
-message("Sort CMake")
+message("Arrays CMake")
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-Wall -Wextra -Wpedantic -Werror")
@@ -13,7 +13,6 @@ file(GLOB_RECURSE HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*/*.hpp ${CMAKE_CURRENT_SO
 # message("SOURCES = ${SOURCES}")
 # message("HEADERS = ${HEADERS}")
 
-set(Sort_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/BubbleSort PARENT_SCOPE)
-#set(Sort_INCLUDE_DIRS ${Sort_INCLUDE_DIRS}  PARENT_SCOPE)
+set(Arrays_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Intersection PARENT_SCOPE)
 
-message("Sort_INCLUDE_DIRS = ${Sort_INCLUDE_DIRS}")
+message("Arrays_INCLUDE_DIRS = ${Arrays_INCLUDE_DIRS}")
