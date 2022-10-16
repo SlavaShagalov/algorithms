@@ -2,6 +2,8 @@
 
 #include "algorithmsConfig.h"
 
+#include "dynamic_array.hpp"
+#include "stack.hpp"
 #include "bubble_sort.hpp"
 
 int main(int argc, char* argv[]) {

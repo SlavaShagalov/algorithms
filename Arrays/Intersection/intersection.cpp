@@ -14,7 +14,7 @@ void intersection(const int *arrA, const int nArrA, const int *arrB, const int n
         if (right > nArrA - 1)
             right = nArrA - 1;
 
-        std::cout << left << "; " << right << std::endl;
+//        std::cout << left << "; " << right << std::endl;
 
         // binary search
         while (left < right) {

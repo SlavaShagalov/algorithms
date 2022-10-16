@@ -13,6 +13,8 @@ add_subdirectory(Bit)
 add_subdirectory(Sort)
 add_subdirectory(Search)
 add_subdirectory(Arrays)
+add_subdirectory(DynamicArray)
+add_subdirectory(Stack)
 
 message("Project CMake")
 file(GLOB_RECURSE SOURCES
@@ -21,6 +23,8 @@ file(GLOB_RECURSE SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/Bit/**/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Search/**/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Arrays/**/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/DynamicArray/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Stack/*.cpp
         )
 
 message("SOURCES = ${SOURCES}")
@@ -33,6 +37,8 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${Bit_INCLUDE_DIRS}
         ${Search_INCLUDE_DIRS}
         ${Arrays_INCLUDE_DIRS}
+        ${DynamicArray_INCLUDE_DIRS}
+        ${Stack_INCLUDE_DIRS}
         )
 
 add_subdirectory(Tests)
