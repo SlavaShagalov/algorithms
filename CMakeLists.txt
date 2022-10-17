@@ -4,9 +4,17 @@ project(algorithms)
 # options
 option(BUILD_TESTS "Build tests")
 set(BUILD_TESTS OFF)
+option(RELEASE "Release")
+set(RELEASE OFF)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+if (RELEASE)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
+else ()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0")
+endif ()
 
 if (BUILD_TESTS)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wpedantic -Wextra -Werror -fprofile-arcs -ftest-coverage -O0")
