@@ -1,7 +1,5 @@
 #include <iostream>
 
-#include "algorithmsConfig.h"
-
 #include "dynamic_array.hpp"
 #include "stack.hpp"
 #include "queue.hpp"
@@ -9,10 +7,8 @@
 #include "bubble_sort.hpp"
 
 int main(int argc, char* argv[]) {
-    // printf("F10 = %d\n", fib(10));
-
-    std::cout << argv[0] << " Version " << algorithms_VERSION_MAJOR << "."
-              << algorithms_VERSION_MINOR << std::endl;
+    (void)argc;
+    (void)argv;
 
     const int SIZE = 5;
     int arr[SIZE] = {2, 5, 0, -4, 0};

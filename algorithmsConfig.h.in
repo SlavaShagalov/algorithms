@@ -1,3 +1,0 @@
-// the configured options and settings for algorithms
-#define algorithms_VERSION_MAJOR @algorithms_VERSION_MAJOR@
-#define algorithms_VERSION_MINOR @algorithms_VERSION_MINOR@

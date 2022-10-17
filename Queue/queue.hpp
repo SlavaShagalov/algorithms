@@ -15,7 +15,7 @@ private:
 public:
     explicit Queue(size_t size) : _size(size), _head(0), _tail(0) { _buffer = new T[_size]; }
 
-    ~Queue() { delete[] _buffer }
+    ~Queue() { delete[] _buffer; }
 
     // methods
     void push(const T &elem);
@@ -39,5 +39,4 @@ T Queue<T>::pop() {
     _head = (_head + 1) % _size;
     return result;
 }
-
 #endif // QUEUE_HPP

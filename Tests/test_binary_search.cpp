@@ -2,16 +2,6 @@
 
 #include "binary_search.hpp"
 
-TEST(BinarySearch, Empty) {
-    int arr[] = {};
-    int size = 0;
-    int value = 5;
-
-    int index = binarySearch(arr, size, value);
-
-    EXPECT_EQ(index, -1);
-}
-
 TEST(BinarySearch, OneElemNotFound) {
     int arr[] = {4};
     int size = 1;
