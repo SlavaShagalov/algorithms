@@ -46,7 +46,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test3
-          path: "${{github.workspace}}"/build
+          path: ${{github.workspace}}/build
 
       - name: Upload test 5
         uses: actions/upload-artifact@v3
