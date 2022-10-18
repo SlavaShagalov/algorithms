@@ -7,7 +7,7 @@ on:
 env:
   BUILD_TYPE: Debug
   RUN_MEMORY_CHECK: ${{ (secrets.RUN_MEMORY_CHECK == 'true') }}
-  WORK_DIR: "$GITHUB_WORKSPACE"
+  WORK_DIR: $GITHUB_WORKSPACE
 
 jobs:
   check-style:
@@ -32,6 +32,7 @@ jobs:
         run: cd ${{env.WORK_DIR}}/build; ctest -C ${{env.BUILD_TYPE}}; cd ${{env.WORK_DIR}}
 
       - run: echo ${{env.WORK_DIR}}
+      - run: ls -lah ${{env.WORK_DIR}}
 
       - name: Upload test 1
         uses: actions/upload-artifact@v3
