@@ -7,7 +7,7 @@ on:
 env:
   BUILD_TYPE: Debug
   RUN_MEMORY_CHECK: ${{ (secrets.RUN_MEMORY_CHECK == 'true') }}
-  WORK_DIR: ${{github.workspace}}/build
+  WORK_DIR: "${{github.workspace}}/build"
 
 jobs:
   check-style:
