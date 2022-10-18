@@ -7,6 +7,7 @@ on:
 env:
   BUILD_TYPE: Debug
   RUN_MEMORY_CHECK: ${{ (secrets.RUN_MEMORY_CHECK == 'true') }}
+  WORK_DIR: ${{github.workspace}}
 
 jobs:
   check-style:
@@ -30,23 +31,26 @@ jobs:
       - name: Test
         run: cd ${{github.workspace}}/build; ctest -C ${{env.BUILD_TYPE}}
 
+      - run: echo ${{env.WORK_DIR}}
+
       - name: Upload test 1
         uses: actions/upload-artifact@v3
         with:
           name: test1
-          path: ./build
+          path: ${{env.WORK_DIR}}/build
 
       - name: Upload test 2
         uses: actions/upload-artifact@v3
         with:
           name: test2
-          path: ${{github.workspace}}/build
+          path: ${{env.WORK_DIR}}/build
 
+      - run: cd ${{env.WORK_DIR}}
       - name: Upload test 3
         uses: actions/upload-artifact@v3
         with:
           name: test3
-          path: build
+          path: ${{env.WORK_DIR}}/build
 
 #      - run: cd "$GITHUB_WORKSPACE"
 #      - name: Upload test 2
