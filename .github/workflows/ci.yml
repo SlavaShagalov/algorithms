@@ -6,7 +6,7 @@ on:
 
 env:
   BUILD_TYPE: Debug
-  RUN_MEMORY_CHECK: ${{ ((secrets.RUN_MEMORY_CHECK == 'true') }}
+  RUN_MEMORY_CHECK: ${{ (secrets.RUN_MEMORY_CHECK == 'true') }}
 
 jobs:
   all:
