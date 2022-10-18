@@ -59,5 +59,3 @@ jobs:
         run: |
           echo "Checking Valgrind xml ..."
             ./check_memory.sh
-
-      - run: ./build/Tests/Tests > /dev/null

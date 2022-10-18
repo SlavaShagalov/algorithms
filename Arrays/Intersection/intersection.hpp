@@ -3,6 +3,7 @@
 
 #include <iostream>
 
-void intersection(const int *arrA, const int nArrA, const int *arrB, const int nArrB, int *res, int *l);
+void intersection(const int *arrA, const int nArrA, const int *arrB,
+                  const int nArrB, int *res, int *l);
 
 #endif  // INTERSECTION_HPP
