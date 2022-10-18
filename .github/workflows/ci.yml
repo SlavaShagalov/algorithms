@@ -32,13 +32,13 @@ jobs:
         run: cd ${{env.WORK_DIR}}/build; ctest -C ${{env.BUILD_TYPE}}; cd ${{env.WORK_DIR}}
 
       - run: echo ${{env.WORK_DIR}}
-      - run: ls -lah ${{env.WORK_DIR}}
+      - run: ls -lah "${{env.WORK_DIR}}"
 
       - name: Upload test 1
         uses: actions/upload-artifact@v3
         with:
           name: test1
-          path: ${{env.WORK_DIR}}/build
+          path: "${{env.WORK_DIR}}"/build
   check-memory:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
