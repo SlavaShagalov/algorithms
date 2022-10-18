@@ -49,8 +49,10 @@ jobs:
           name: test
           path: ./build/Tests
 
+      - run: chmod 777 ./build/Tests/Tests
+
       - name: Run Tests with Valgrind
-        run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests > /dev/null
+        run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests >/dev/null 2>&1
 
       - name: Valgrind Memory check
         if: ${{ env.RUN_MEMORY_CHECK == 'true' }}

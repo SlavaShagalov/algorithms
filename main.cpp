@@ -8,9 +8,9 @@
 #include "queue_using_stacks.hpp"
 #include "bubble_sort.hpp"
 
-int main(int argc, char* argv[]) {
-    (void)argc;
-    (void)argv;
+int main(int argc, char *argv[]) {
+    (void) argc;
+    (void) argv;
 
     const int SIZE = 5;
     int arr[SIZE] = {2, 5, 0, -4, 0};

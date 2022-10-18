@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-clang-format --style={{Google}}
+clang-format --verbose --style=Google \
+              ./*.cpp
