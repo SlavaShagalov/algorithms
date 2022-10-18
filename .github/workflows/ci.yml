@@ -7,7 +7,7 @@ on:
 env:
   BUILD_TYPE: Debug
   RUN_MEMORY_CHECK: ${{ (secrets.RUN_MEMORY_CHECK == 'true') }}
-  WORK_DIR: ${{GITHUB_WORKSPACE}}
+  WORK_DIR: $GITHUB_WORKSPACE
 
 jobs:
   check-style:
@@ -39,6 +39,12 @@ jobs:
         with:
           name: test1
           path: ${{env.WORK_DIR}}/build
+
+      - name: Upload test 1
+        uses: actions/upload-artifact@v3
+        with:
+          name: test1
+          path: $GITHUB_WORKSPACE/build
   check-memory:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
