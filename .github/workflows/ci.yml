@@ -37,10 +37,10 @@ jobs:
         run: ls -lah
 
       - name: LS
-        run: ls -lah build
+        run: ls -lah ${{github.workspace}}/build
 
       - name: LS
-        run: ls -lah build/Tests
+        run: ls -lah ${{github.workspace}}/build/Tests
 
 #      - run: cd ${{github.workspace}}; mkdir -p out; touch out/test
 #      - run: cp ${{github.workspace}}/build/Tests/Tests out/test
