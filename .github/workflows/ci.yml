@@ -42,6 +42,9 @@ jobs:
       - name: LS
         run: ls -lah ${{github.workspace}}/build/Tests
 
+      - name: LS
+        run: ls -lah
+
       - name: Upload test
         uses: actions/upload-artifact@v3
         with:
@@ -52,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test2
-          path: build/Tests
+          path: ./build/Tests
   check-memory:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
@@ -64,19 +67,19 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: test
-          path: ${{github.workspace}}/build/Tests
+          path: ./build/Tests
 
-      - name: PWD
-        run: pwd
-
-      - name: LS
-        run: ls -lah ${{github.workspace}}
-
-      - name: LS
-        run: ls -lah ${{github.workspace}}/build
-
-      - name: LS
-        run: ls -lah ${{github.workspace}}/build/Tests
+#      - name: PWD
+#        run: pwd
+#
+#      - name: LS
+#        run: ls -lah ${{github.workspace}}
+#
+#      - name: LS
+#        run: ls -lah ${{github.workspace}}/build
+#
+#      - name: LS
+#        run: ls -lah ${{github.workspace}}/build/Tests
 
       - name: Run Tests with Valgrind
         run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests &> /dev/null
