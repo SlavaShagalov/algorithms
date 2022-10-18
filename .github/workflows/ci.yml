@@ -48,7 +48,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test2
-          path: ${{GITHUB_WORKSPACE}}/build/Tests
+          path: "$GITHUB_WORKSPACE"/build/Tests
 
       - name: Upload test 3
         uses: actions/upload-artifact@v3
