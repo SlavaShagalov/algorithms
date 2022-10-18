@@ -30,14 +30,14 @@ jobs:
       - name: Test
         run: cd ${{github.workspace}}/build; ctest -C ${{env.BUILD_TYPE}}; cd ${{github.workspace}}
 
-      - run: cd ${{github.workspace}}; mkdir -p out; touch out/test
-      - run: cp ${{github.workspace}}/build/Tests/Tests out/test
+#      - run: cd ${{github.workspace}}; mkdir -p out; touch out/test
+#      - run: cp ${{github.workspace}}/build/Tests/Tests out/test
 
       - name: Upload test
         uses: actions/upload-artifact@v3
         with:
           name: test
-          path: out/test
+          path: ${{github.workspace}}/build/Tests/Tests
   check-memory:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
@@ -60,7 +60,7 @@ jobs:
         run: ls -lah out
 
       - name: Run Tests with Valgrind
-        run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml .out/test &> /dev/null
+        run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests &> /dev/null
 
       - name: Valgrind Memory check
         if: ${{ env.RUN_MEMORY_CHECK == 'true' }}
