@@ -35,11 +35,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test
-          path: ${{github.workspace}}/build
+          path: ${{github.workspace}}/build/Tests/Tests
   check-memory:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
-    needs: [build]
+    needs: [ build ]
     steps:
       - uses: actions/checkout@v3
 
@@ -47,14 +47,12 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: test
-          path: ${{github.workspace}}/build
+          path: ${{github.workspace}}/build/Tests/Tests
 
-      - run: ls -lah
-      - run: ls -lah ${{env.WORK_DIR}}
-      - run: ls -lah ${{env.WORK_DIR}}/build
+      - run: chmod 777 ${{github.workspace}}/build/Tests/Tests
 
       - name: Run Tests with Valgrind
-        run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests &> /dev/null
+        run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ${{github.workspace}}/build/Tests/Tests &> /dev/null
 
       - name: Valgrind Memory check
         if: ${{ env.RUN_MEMORY_CHECK == 'true' }}
