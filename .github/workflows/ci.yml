@@ -31,35 +31,37 @@ jobs:
         run: cd "$GITHUB_WORKSPACE"/build; ctest -C ${{env.BUILD_TYPE}}
 
       - run: pwd
-      - run: ls -lah ${{github.workspace}}
+#      - run: ls -lah ${{github.workspace}}
       - run: ls -lah "$GITHUB_WORKSPACE"
       - run: ls -lah
 
-      - run: cd "$GITHUB_WORKSPACE"
-      - name: Upload test 1
+      - echo: "$GITHUB_WORKSPACE"
+      - echo: $GITHUB_WORKSPACE
+
+      - name: Upload test 2
         uses: actions/upload-artifact@v3
         with:
-          name: test1
-          path: "${{github.workspace}}/build"
+          name: test2
+          path: "\"$GITHUB_WORKSPACE\"/build"
 
       - name: Upload test 3
         uses: actions/upload-artifact@v3
         with:
           name: test3
-          path: ${{github.workspace}}/build
+          path: "\"$GITHUB_WORKSPACE\"/build"
 
       - name: Upload test 5
         uses: actions/upload-artifact@v3
         with:
           name: test5
-          path: ${{github.workspace}}
+          path: "\"$GITHUB_WORKSPACE\"/build"
 
-      - run: cd ${{github.workspace}}
+      - run: cd "$GITHUB_WORKSPACE"
       - name: Upload test 4
         uses: actions/upload-artifact@v3
         with:
           name: test4
-          path: ${{github.workspace}}/build
+          path: ./build
   check-memory:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
