@@ -30,6 +30,18 @@ jobs:
       - name: Test
         run: cd ${{github.workspace}}/build; ctest -C ${{env.BUILD_TYPE}}; cd ${{github.workspace}}
 
+      - name: PWD
+        run: pwd
+
+      - name: LS
+        run: ls -lah
+
+      - name: LS
+        run: ls -lah build
+
+      - name: LS
+        run: ls -lah build/Tests
+
 #      - run: cd ${{github.workspace}}; mkdir -p out; touch out/test
 #      - run: cp ${{github.workspace}}/build/Tests/Tests out/test
 
@@ -55,9 +67,6 @@ jobs:
 
       - name: LS
         run: ls -lah
-
-      - name: LS
-        run: ls -lah out
 
       - name: Run Tests with Valgrind
         run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests &> /dev/null
