@@ -50,7 +50,7 @@ jobs:
           path: ./build/Tests
 
       - name: Run Tests with Valgrind
-        run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests >/dev/null 2>&1
+        run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests > /dev/null
 
       - name: Valgrind Memory check
         if: ${{ env.RUN_MEMORY_CHECK == 'true' }}
@@ -58,4 +58,4 @@ jobs:
           echo "Checking Valgrind xml ..."
             ./check_memory.sh
 
-      - run: ./build/Tests/Tests > /dev/null 2 > &1
+      - run: ./build/Tests/Tests > /dev/null
