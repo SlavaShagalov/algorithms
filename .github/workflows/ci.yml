@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test
-          path: ${{github.workspace}}/build/Tests/Tests
+          path: ${{github.workspace}}/build/Tests
   check-memory:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
@@ -47,7 +47,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: test
-          path: ./build/Tests/Tests
+          path: ./build/Tests
 
       - run: chmod 777 ./build/Tests/Tests
 
