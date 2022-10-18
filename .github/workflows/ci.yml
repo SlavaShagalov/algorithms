@@ -61,12 +61,19 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: test
+          path: ${{github.workspace}}/build
 
       - name: PWD
         run: pwd
 
       - name: LS
-        run: ls -lah
+        run: ls -lah ${{github.workspace}}
+
+      - name: LS
+        run: ls -lah ${{github.workspace}}/build
+
+      - name: LS
+        run: ls -lah ${{github.workspace}}/build/Tests
 
       - name: Run Tests with Valgrind
         run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests &> /dev/null
