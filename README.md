@@ -2,7 +2,7 @@
 
 ## How to create build directory
 
-cmake -B ./cmake-build-debug -S. -D CMAKE_BUILD_TYPE=Debug
+cmake -B ./cmake-build-debug -S. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
 ## How to build
 

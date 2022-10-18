@@ -39,4 +39,5 @@ T Queue<T>::pop() {
     _head = (_head + 1) % _size;
     return result;
 }
-#endif // QUEUE_HPP
+
+#endif  // QUEUE_HPP

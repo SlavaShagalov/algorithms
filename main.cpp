@@ -1,3 +1,5 @@
+// Copyright 2022 Slava Shagalov
+
 #include <iostream>
 
 #include "dynamic_array.hpp"
@@ -13,12 +15,11 @@ int main(int argc, char* argv[]) {
     const int SIZE = 5;
     int arr[SIZE] = {2, 5, 0, -4, 0};
 
-    bubbleSort(arr, SIZE); 
+    bubbleSort(arr, SIZE);
 
-    for (int i = 0; i < SIZE; i++)
-    {
+    for (int i = 0; i < SIZE; i++) {
         std::cout << arr[i] << " ";
     }
 
-    std::cout << std::endl; 
+    std::cout << std::endl;
 }

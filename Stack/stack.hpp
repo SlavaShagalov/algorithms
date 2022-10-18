@@ -2,6 +2,8 @@
 #define STACK_HPP
 
 #include <cstddef>
+#include <cassert>
+#include <algorithm>
 
 template<typename T>
 class Stack {
@@ -52,4 +54,4 @@ void Stack<T>::resize() {
     _buffer = newBuffer;
 }
 
-#endif // STACK_HPP
+#endif  // STACK_HPP

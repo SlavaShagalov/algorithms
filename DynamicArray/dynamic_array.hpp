@@ -3,10 +3,11 @@
 
 #include <cstddef>
 #include <cassert>
+#include <algorithm>
 
 template<typename T>
 class DynamicArray {
-private:
+ private:
     static const size_t initSize = 8;
 
     T *_buffer;
@@ -15,7 +16,7 @@ private:
 
     void resize();
 
-public:
+ public:
     DynamicArray() : _buffer(nullptr), _size(0), _capacity(0) {}
 
     DynamicArray(const DynamicArray &other);
@@ -83,8 +84,8 @@ void DynamicArray<T>::add(const T &elem) {
 }
 
 template<typename T>
-DynamicArray<T>::DynamicArray(const size_t capacity) : _size(0), _capacity(capacity)  {
+DynamicArray<T>::DynamicArray(const size_t capacity) : _size(0), _capacity(capacity) {
     _buffer = new T[_capacity];
 }
 
-#endif // DYNAMIC_ARRAY_HPP
+#endif  // DYNAMIC_ARRAY_HPP

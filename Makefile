@@ -1,13 +1,7 @@
 .PHONY: check clean
 
-check:
+check_run:
 	./Linters/run.sh
-
-build:
-	echo "Building..."
-
-test:
-	echo "Testing..."
 
 clean:
 	rm *.out *.o

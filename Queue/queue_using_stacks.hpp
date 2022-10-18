@@ -41,4 +41,5 @@ T QueueUsingStacks<T>::pop() {
 
     return outStack.pop();
 }
-#endif // QUEUE_USING_STACKS_HPP
+
+#endif  // QUEUE_USING_STACKS_HPP

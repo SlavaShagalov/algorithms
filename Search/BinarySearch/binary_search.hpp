@@ -5,4 +5,4 @@
 
 int binarySearch(const int *arr, const int n, const int value);
 
-#endif // INTERSECTION_HPP
+#endif  // INTERSECTION_HPP

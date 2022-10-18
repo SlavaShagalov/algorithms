@@ -5,4 +5,4 @@
 
 void bubbleSort(int arr[], const int size);
 
-#endif // BUBBLE_SORT_H 
+#endif  // BUBBLE_SORT_H

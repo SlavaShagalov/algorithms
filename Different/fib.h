@@ -3,4 +3,4 @@
 
 int fib(int n);
 
-#endif // FIB_H
+#endif  // FIB_H

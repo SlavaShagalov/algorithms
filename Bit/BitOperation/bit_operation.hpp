@@ -5,4 +5,4 @@
 
 bool getBit(uint32_t num, uint8_t index);
 
-#endif // BIT_OPERATION_HPP 
+#endif  // BIT_OPERATION_HPP

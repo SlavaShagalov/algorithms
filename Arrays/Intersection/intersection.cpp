@@ -8,8 +8,7 @@ void intersection(const int *arrA, const int nArrA, const int *arrB, const int n
         value = arrB[i];
 
         // find range
-        for (right = left + 1; right < nArrA && arrA[right] < value; right *= 2)
-            ;
+        for (right = left + 1; right < nArrA && arrA[right] < value; right *= 2) {}
         left = right / 2;
         if (right > nArrA - 1)
             right = nArrA - 1;
