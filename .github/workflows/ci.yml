@@ -50,8 +50,8 @@ jobs:
           path: ${{github.workspace}}/build
 
       - run: ls -lah
-      - run: ls -lah ${{github.workspace}}
-      - run: ls -lah ${{github.workspace}}/build
+      - run: ls -lah ${{env.WORK_DIR}}
+      - run: ls -lah ${{env.WORK_DIR}}/build
 
       - name: Run Tests with Valgrind
         run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests &> /dev/null
