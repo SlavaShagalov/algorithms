@@ -39,22 +39,27 @@ jobs:
 
       - run: cd "$GITHUB_WORKSPACE"
       - name: Upload test 1
-        working-directory: "$GITHUB_WORKSPACE"
         uses: actions/upload-artifact@v3
         with:
           name: test1
           path: ./build/Tests
 
+      - working-directory: "$GITHUB_WORKSPACE"
       - name: Upload test 3
-        working-directory: ${{github.workspace}}
         uses: actions/upload-artifact@v3
         with:
           name: test3
           path: ./build/Tests
 
+      - working-directory: ${{github.workspace}}
+      - name: Upload test 5
+        uses: actions/upload-artifact@v3
+        with:
+          name: test5
+          path: ./build/Tests
+
       - run: cd ${{github.workspace}}
       - name: Upload test 4
-        working-directory: ${{github.workspace}}
         uses: actions/upload-artifact@v3
         with:
           name: test4
