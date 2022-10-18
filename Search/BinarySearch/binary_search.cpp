@@ -11,5 +11,8 @@ int binarySearch(const int *arr, const int n, const int value) {
             right = mid;
     }
 
+    int *p = new int;
+    *p = 5;
+
     return arr[left] == value ? left : -1;
 }

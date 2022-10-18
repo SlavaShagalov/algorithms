@@ -49,8 +49,6 @@ jobs:
           name: test
           path: ./build/Tests
 
-      - run: ./build/Tests/Tests >/dev/null 2>&1
-
       - name: Run Tests with Valgrind
         run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests >/dev/null 2>&1
 
@@ -59,3 +57,5 @@ jobs:
         run: |
           echo "Checking Valgrind xml ..."
             ./check_memory.sh
+
+      - run: ./build/Tests/Tests > /dev/null 2 > &1

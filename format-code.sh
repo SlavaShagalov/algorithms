@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-clang-format
+clang-format --style={{Google}}
