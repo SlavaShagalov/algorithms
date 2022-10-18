@@ -34,7 +34,7 @@ jobs:
         run: pwd
 
       - name: LS
-        run: ls -lah
+        run: ls -lah ${{github.workspace}}
 
       - name: LS
         run: ls -lah ${{github.workspace}}/build
@@ -42,14 +42,17 @@ jobs:
       - name: LS
         run: ls -lah ${{github.workspace}}/build/Tests
 
-#      - run: cd ${{github.workspace}}; mkdir -p out; touch out/test
-#      - run: cp ${{github.workspace}}/build/Tests/Tests out/test
-
       - name: Upload test
         uses: actions/upload-artifact@v3
         with:
           name: test
-          path: ${{github.workspace}}/build/Tests/Tests
+          path: ${{github.workspace}}/build/Tests
+
+      - name: Upload test 2
+        uses: actions/upload-artifact@v3
+        with:
+          name: test2
+          path: build/Tests
   check-memory:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
@@ -61,7 +64,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: test
-          path: ${{github.workspace}}/build
+          path: ${{github.workspace}}/build/Tests
 
       - name: PWD
         run: pwd
