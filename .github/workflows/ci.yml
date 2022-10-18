@@ -28,13 +28,11 @@ jobs:
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Test
-        run: cd ${{github.workspace}}/build; ctest -C ${{env.BUILD_TYPE}}; cd ${{github.workspace}}
+        run: cd ${{github.workspace}}/build; ctest -C ${{env.BUILD_TYPE}}
 
       - run: pwd
       - run: ls -lah ${{github.workspace}}
       - run: ls -lah "$GITHUB_WORKSPACE"
-      - run: ls -lah ${{ runner.workspace }}
-      - run: ls -lah "$RUNNER_WORKSPACE"
       - run: ls -lah
 
       - run: cd "$GITHUB_WORKSPACE"
@@ -42,26 +40,26 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test1
-          path: ./build/Tests
+          path: "${{github.workspace}}/build"
 
       - name: Upload test 3
         uses: actions/upload-artifact@v3
         with:
           name: test3
-          path: ./build/Tests
+          path: "${{github.workspace}}"/build
 
       - name: Upload test 5
         uses: actions/upload-artifact@v3
         with:
           name: test5
-          path: ./build/Tests
+          path: ${{github.workspace}}
 
       - run: cd ${{github.workspace}}
       - name: Upload test 4
         uses: actions/upload-artifact@v3
         with:
           name: test4
-          path: ./build/Tests
+          path: ${{github.workspace}}/build
   check-memory:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
