@@ -7,7 +7,7 @@ on:
 env:
   BUILD_TYPE: Debug
   RUN_MEMORY_CHECK: ${{ (secrets.RUN_MEMORY_CHECK == 'true') }}
-  WORK_DIR: "${{github.workspace}}/build"
+  WORK_DIR: "$GITHUB_WORKSPACE"
 
 jobs:
   check-style:
@@ -23,13 +23,13 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+        run: cmake -B ${{env.WORK_DIR}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
       - name: Build App and Tests
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        run: cmake --build ${{env.WORK_DIR}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Test
-        run: cd ${{github.workspace}}/build; ctest -C ${{env.BUILD_TYPE}}
+        run: cd ${{env.WORK_DIR}}/build; ctest -C ${{env.BUILD_TYPE}}; cd ${{env.WORK_DIR}}
 
       - run: echo ${{env.WORK_DIR}}
 
@@ -37,47 +37,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test1
-          path: ${{env.WORK_DIR}}
-
-      - name: Upload test 2
-        uses: actions/upload-artifact@v3
-        with:
-          name: test2
-          path: '${{env.WORK_DIR}}'
-
-      - run: cd ${{env.WORK_DIR}}
-      - name: Upload test 3
-        uses: actions/upload-artifact@v3
-        with:
-          name: test3
-          path: "${{env.WORK_DIR}}"
-
-#      - run: cd "$GITHUB_WORKSPACE"
-#      - name: Upload test 2
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: test2
-#          path: ./build
-#
-#      - run: cd "$GITHUB_WORKSPACE"
-#      - name: Upload test 2
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: test2
-#          path: build
-
-#      - name: Upload test 5
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: test5
-#          path: "\"$GITHUB_WORKSPACE\"/build"
-
-#      - run: cd "$GITHUB_WORKSPACE"
-#      - name: Upload test 4
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: test4
-#          path: ./build
+          path: ${{env.WORK_DIR}}/build
   check-memory:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
