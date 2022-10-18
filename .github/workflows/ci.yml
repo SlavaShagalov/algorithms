@@ -30,7 +30,7 @@ jobs:
       - name: Test
         run: cd ${{github.workspace}}/build; ctest -C ${{env.BUILD_TYPE}}; cd ${{github.workspace}}
 
-      - run: cd ${{github.workspace}}; mkdir -p out
+      - run: cd ${{github.workspace}}; mkdir -p out; touch out/test
       - run: cp ${{github.workspace}}/build/Tests/Tests out/test
 
       - name: Upload test
