@@ -33,14 +33,10 @@ jobs:
       - name: PWD
         run: pwd
 
-      - name: LS
-        run: ls -lah ${{github.workspace}}
-
-      - name: LS
-        run: ls -lah ${{github.workspace}}/build
-
-      - name: LS
-        run: ls -lah ${{github.workspace}}/build/Tests
+      - run: ls -lah ${{github.workspace}}
+      - run: ls -lah "$GITHUB_WORKSPACE"
+      - run: ls -lah ${{ runner.workspace }}
+      - run: ls -lah "$RUNNER_WORKSPACE"
 
       - name: LS
         run: ls -lah
@@ -49,7 +45,19 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test
-          path: $GITHUB_WORKSPACE/build/Tests
+          path: "$GITHUB_WORKSPACE"/build/Tests
+
+      - name: Upload test 2
+        uses: actions/upload-artifact@v3
+        with:
+          name: test2
+          path: ${{ github.workspace }}/build/Tests
+
+      - name: Upload test
+        uses: actions/upload-artifact@v3
+        with:
+          name: test
+          path: "$RUNNER_WORKSPACE"/build/Tests
 
       - name: Upload test 2
         uses: actions/upload-artifact@v3
