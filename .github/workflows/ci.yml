@@ -57,10 +57,10 @@ jobs:
           path: ./build/Tests
 
       - run: cd ${{github.workspace}}
-      - name: Upload test 3
+      - name: Upload test 4
         uses: actions/upload-artifact@v3
         with:
-          name: test3
+          name: test4
           path: ./build/Tests
   check-memory:
     runs-on: ubuntu-latest
