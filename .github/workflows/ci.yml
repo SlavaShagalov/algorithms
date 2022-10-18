@@ -37,11 +37,12 @@ jobs:
       - run: ls -lah "$RUNNER_WORKSPACE"
       - run: ls -lah
 
+      - run: cd "$GITHUB_WORKSPACE"
       - name: Upload test 1
         uses: actions/upload-artifact@v3
         with:
           name: test1
-          path: "$GITHUB_WORKSPACE"/build/Tests
+          path: ./build/Tests
 
       - name: Upload test 2
         uses: actions/upload-artifact@v3
@@ -53,7 +54,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test3
-          path: "${{GITHUB_WORKSPACE}}"/build/Tests
+          path: ./build/Tests
 
       - run: cd ${{github.workspace}}
       - name: Upload test 3
