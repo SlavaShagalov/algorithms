@@ -47,12 +47,12 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: test
-          path: ${{github.workspace}}/build/Tests/Tests
+          path: ./build/Tests/Tests
 
-      - run: chmod 777 ${{github.workspace}}/build/Tests/Tests
+      - run: chmod 777 ./build/Tests/Tests
 
       - name: Run Tests with Valgrind
-        run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ${{github.workspace}}/build/Tests/Tests &> /dev/null
+        run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests &> /dev/null
 
       - name: Valgrind Memory check
         if: ${{ env.RUN_MEMORY_CHECK == 'true' }}
