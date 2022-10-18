@@ -1,7 +1,7 @@
 .PHONY: check clean
 
 check_run:
-	./run.sh
+	./run_linters.sh
 
 clean:
 	rm *.out *.o

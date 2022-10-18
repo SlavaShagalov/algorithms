@@ -15,7 +15,7 @@ jobs:
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
     steps:
       - uses: actions/checkout@v3
-      - run: make check_run
+      - run: ./run_linters.sh
   all:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
@@ -38,7 +38,7 @@ jobs:
 
       - name: Run Tests with Valgrind
         working-directory: ${{github.workspace}}
-        run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests &> /dev/null
+        run: pwd; ls -lah build; ls -lah build/Tests; valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests &> /dev/null
 
       - name: Valgrind Memory check
         if: ${{ env.RUN_MEMORY_CHECK == 'true' }}
