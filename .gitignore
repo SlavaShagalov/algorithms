@@ -46,3 +46,6 @@ CTestTestfile.cmake
 
 # CLion
 .idea/*
+
+# valgrind
+unit_tests_valgrind.xml

@@ -15,3 +15,7 @@ lcov -t "Tests coverage" -o coverage.info -c -d Tests/CMakeFiles/Tests.dir/__/
 ## HTML result
 
 genhtml -o report coverage.info
+
+## Memory test
+
+valgrind --tool=memcheck --leak-check=yes ./a.out

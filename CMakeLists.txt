@@ -2,23 +2,23 @@ cmake_minimum_required(VERSION 3.14)
 project(algorithms)
 
 # options
-option(BUILD_TESTS "Build tests")
-set(BUILD_TESTS OFF)
+option(DEBUG "Debug")
+set(DEBUG ON)
 option(RELEASE "Release")
 set(RELEASE OFF)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-if (RELEASE)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
-else ()
+# compiler and linker setup
+if (DEBUG)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0")
-endif ()
-
-if (BUILD_TESTS)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wpedantic -Wextra -Werror -fprofile-arcs -ftest-coverage -O0")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wpedantic -Wextra -Werror")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -coverage -lgcov")
+elseif (RELEASE)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
 endif ()
 message("CMAKE_CXX_FLAGS =${CMAKE_CXX_FLAGS}")
 message("CMAKE_EXE_LINKER_FLAGS =${CMAKE_EXE_LINKER_FLAGS}")
