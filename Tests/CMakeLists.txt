@@ -8,10 +8,10 @@ file(GLOB SOURCES
         *.cpp
         ${Sort_INCLUDE_DIRS}/*.cpp
         ${Bit_INCLUDE_DIRS}/*.cpp
-        ${Search_INCLUDE_DIRS}/*.cpp
+        ${Search_INCLUDE_DIRS}/*/*.cpp
         ${Arrays_INCLUDE_DIRS}/*.cpp
         )
-#message("TEST SOURCES = ${SOURCES}")
+message("TEST SOURCES = ${SOURCES}")
 
 # executable
 find_package(GTest REQUIRED)
@@ -19,7 +19,8 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PUBLIC
         ${Sort_INCLUDE_DIRS}
         ${Bit_INCLUDE_DIRS}
-        ${Search_INCLUDE_DIRS}
+        ${Search_INCLUDE_DIRS}/BinarySearch
+        ${Search_INCLUDE_DIRS}/LinearSearch
         ${Arrays_INCLUDE_DIRS}
         )
 target_link_libraries(${PROJECT_NAME} GTest::gtest_main)

@@ -10,12 +10,12 @@ env:
   WORK_DIR: $GITHUB_WORKSPACE
 
 jobs:
-#  check-style:
-#    runs-on: ubuntu-latest
-#    container: leshiy1295/gcc_linters_valgrind_cmake_gtest
-#    steps:
-#      - uses: actions/checkout@v3
-#      - run: ./run_linters.sh
+  check-style:
+    runs-on: ubuntu-latest
+    container: leshiy1295/gcc_linters_valgrind_cmake_gtest
+    steps:
+      - uses: actions/checkout@v3
+      - run: ./run_linters.sh
   build:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest

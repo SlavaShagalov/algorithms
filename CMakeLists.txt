@@ -26,19 +26,21 @@ message("CMAKE_EXE_LINKER_FLAGS =${CMAKE_EXE_LINKER_FLAGS}")
 # headers
 set(Bit_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Bit/BitOperation)
 set(Sort_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Sort/BubbleSort)
-set(Search_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Search/BinarySearch)
+set(Search_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Search)
 set(Arrays_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Arrays/Intersection)
 set(DynamicArray_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/DynamicArray)
 set(Stack_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Stack)
 set(Queue_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Queue)
 
+message("Search_INCLUDE_DIRS = ${Search_INCLUDE_DIRS}")
+
 # sources
 file(GLOB_RECURSE SOURCES
         main.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/Sort/**/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/Bit/**/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/Search/**/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/Arrays/**/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Sort/*/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Bit/*/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Search/*/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Arrays/*/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/DynamicArray/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Stack/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Queue/*.cpp
