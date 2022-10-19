@@ -30,19 +30,19 @@ set(Search_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Search)
 set(Arrays_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Arrays/Intersection)
 set(DynamicArray_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/DynamicArray)
 set(Stack_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Stack)
+set(Heap_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Heap)
 set(Queue_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Queue)
-
-message("Search_INCLUDE_DIRS = ${Search_INCLUDE_DIRS}")
 
 # sources
 file(GLOB_RECURSE SOURCES
-        main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Sort/*/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Bit/*/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Search/*/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Arrays/*/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/DynamicArray/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Stack/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Heap/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Queue/*.cpp
         )
 #message("SOURCES = ${SOURCES}")
@@ -57,6 +57,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${Arrays_INCLUDE_DIRS}
         ${DynamicArray_INCLUDE_DIRS}
         ${Stack_INCLUDE_DIRS}
+        ${Heap_INCLUDE_DIRS}
         ${Queue_INCLUDE_DIRS}
         )
 

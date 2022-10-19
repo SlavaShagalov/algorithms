@@ -8,7 +8,7 @@
 template <typename T>
 class DynamicArray {
  private:
-  static const size_t initSize = 8;
+  const size_t initSize = 8;
 
   T *_buffer;
   size_t _size{};
@@ -35,7 +35,11 @@ class DynamicArray {
   // methods
   size_t size() const { return _size; }
 
+  T last() const;
+
   void add(const T &elem);
+
+  void deleteLast();
 };
 
 template <typename T>
@@ -86,6 +90,18 @@ template <typename T>
 DynamicArray<T>::DynamicArray(const size_t capacity)
     : _size(0), _capacity(capacity) {
   _buffer = new T[_capacity];
+}
+
+template <typename T>
+T DynamicArray<T>::last() const {
+  assert(_size > 0);
+  return _buffer[_size - 1];
+}
+
+template <typename T>
+void DynamicArray<T>::deleteLast() {
+  assert(_size > 0);
+  _size--;
 }
 
 #endif  // DYNAMIC_ARRAY_HPP

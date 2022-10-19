@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-clang-format -i --verbose --style=Google \
+clang-format -i --verbose -style=file:".clang-format" \
   ./*.cpp \
   Arrays/*/* \
   Bit/*/* \
@@ -8,4 +8,5 @@ clang-format -i --verbose --style=Google \
   Queue/* \
   Search/*/* \
   Sort/*/* \
-  Stack/*
+  Stack/* \
+  Heap/*

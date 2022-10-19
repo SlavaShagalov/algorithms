@@ -2,7 +2,9 @@
 
 #include "bubble_sort.hpp"
 #include "dynamic_array.hpp"
+#include "heap.hpp"
 #include "queue.hpp"
+#include "priority_queue.hpp"
 #include "queue_using_stacks.hpp"
 #include "stack.hpp"
 
