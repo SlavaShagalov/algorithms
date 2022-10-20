@@ -81,7 +81,8 @@ T &DynamicArray<T>::operator[](size_t index) {
 
 template <typename T>
 void DynamicArray<T>::add(const T &elem) {
-  if (_size == _capacity) resize();
+  if (_size == _capacity)
+    resize();
   assert(_size < _capacity && _buffer != nullptr);
   _buffer[_size++] = elem;
 }

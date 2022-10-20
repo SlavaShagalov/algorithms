@@ -42,4 +42,21 @@ void CountingSort2(int *arr, const size_t size) {
   delete[] b;
 }
 
+void CountingSort2(int *a, int n) {
+  static const int k = 8;
+
+  int *c = new int[k];
+  for (int i = 0; i < k; ++i) c[i] = 0;
+  for (int i = 0; i < n; ++i) ++c[a[i]];
+  for (int i = 1; i < k; ++i) {
+    c[i] += c[i - 1];  // Концы групп.
+  }
+  int *b = new int[n];
+  for (int i = n - 1; i >= 0; --i) {  // Проход с конца.
+    b[--c[a[i]]] = a[i];
+  }
+  delete[] c;
+  memcpy(a, b, n * sizeof(int));
+}
+
 #endif  // COUNTING_SORT_HPP

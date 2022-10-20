@@ -35,7 +35,8 @@ class Stack {
 
 template <typename T>
 void Stack<T>::push(const T &elem) {
-  if (_top + 1 >= _capacity) resize();
+  if (_top + 1 >= _capacity)
+    resize();
   assert(_top + 1 < _capacity && _buffer != nullptr);
   _buffer[++_top] = elem;
 }

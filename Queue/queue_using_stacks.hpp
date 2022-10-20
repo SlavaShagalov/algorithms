@@ -33,7 +33,8 @@ class QueueUsingStacks {
 
 template <typename T>
 T QueueUsingStacks<T>::pop() {
-  if (!outStack.empty()) return outStack.pop();
+  if (!outStack.empty())
+    return outStack.pop();
 
   while (!inStack.empty()) outStack.push(inStack.pop());
 

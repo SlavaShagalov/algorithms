@@ -40,8 +40,10 @@ void Heap<T>::siftDown(int i) {
   int right = 2 * i + 2;
 
   int largest = i;
-  if (left < _arr.size() && _arr[left] > _arr[i]) largest = left;
-  if (right < _arr.size() && _arr[right] > _arr[largest]) largest = right;
+  if (left < _arr.size() && _arr[left] > _arr[i])
+    largest = left;
+  if (right < _arr.size() && _arr[right] > _arr[largest])
+    largest = right;
 
   if (largest != i) {
     std::swap(_arr[i], _arr[largest]);
@@ -58,7 +60,8 @@ template <typename T>
 void Heap<T>::siftUp(int i) {
   while (i > 0) {
     int parent = (i - 1) / 2;
-    if (_arr[i] <= _arr[parent]) return;
+    if (_arr[i] <= _arr[parent])
+      return;
     std::swap(_arr[i], _arr[parent]);
     i = parent;
   }
@@ -76,7 +79,8 @@ T Heap<T>::extractMax() {
   int result = _arr[0];
   _arr[0] = _arr.last();
   _arr.deleteLast();
-  if (!_arr.empty()) siftDown(0);
+  if (!_arr.empty())
+    siftDown(0);
   return result;
 }
 

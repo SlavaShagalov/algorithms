@@ -12,7 +12,8 @@ void intersection(const int *arrA, const int nArrA, const int *arrB,
     for (right = left + 1; right < nArrA && arrA[right] < value; right *= 2) {
     }
     left = right / 2;
-    if (right > nArrA - 1) right = nArrA - 1;
+    if (right > nArrA - 1)
+      right = nArrA - 1;
 
     //        std::cout << left << "; " << right << std::endl;
 
@@ -27,6 +28,7 @@ void intersection(const int *arrA, const int nArrA, const int *arrB,
     if (arrA[left] == value) {
       res[(*l)++] = value;
     }
-    if (left == nArrA - 1) break;
+    if (left == nArrA - 1)
+      break;
   }
 }
