@@ -36,6 +36,15 @@ jobs:
         with:
           name: test
           path: ./build/Tests
+
+      - name: Generate coverage.info
+        run: lcov -t "TestsCoverage" -o coverage.info -c -d build/Tests/CMakeFiles/Tests.dir/__/
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+#          token: ${{ secrets.CODECOV_TOKEN }}
+          file: coverage.info
   check-memory:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest

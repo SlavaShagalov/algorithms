@@ -49,3 +49,6 @@ CTestTestfile.cmake
 
 # valgrind
 unit_tests_valgrind.xml
+
+# coverage
+coverage.info

@@ -8,9 +8,9 @@ cmake -B ./cmake-build-debug -S. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE
 
 cmake --build cmake-build-debug/
 
-## Coverage (in dir cmake-build-debug)
+## Coverage
 
-lcov -t "Tests coverage" -o coverage.info -c -d Tests/CMakeFiles/Tests.dir/__/
+lcov -t "TestsCoverage" -o coverage.info -c -d cmake-build-debug/Tests/CMakeFiles/Tests.dir/__/
 
 ## HTML result
 

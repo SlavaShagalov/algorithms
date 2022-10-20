@@ -16,9 +16,6 @@ void bubbleSort(T *arr, const size_t size, Comparator comp = Comparator()) {
   for (size_t i = 0; i < size - 1; i++)
     for (size_t j = size - 1; j > i; j--)
       if (comp(arr[j], arr[j - 1])) std::swap(arr[j], arr[j - 1]);
-
-  int *p = new int;
-  *p = 5;
 }
 
 #endif  // BUBBLE_SORT_H
