@@ -20,6 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
     steps:
+      - name: Install lcov
+        run: apt install lcov
+
       - uses: actions/checkout@v3
 
       - name: Configure CMake
