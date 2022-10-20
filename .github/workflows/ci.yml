@@ -46,7 +46,7 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-#          token: ${{ secrets.CODECOV_TOKEN }}
+          token: ${{ secrets.CODECOV_TOKEN }}
           file: coverage.info
   check-memory:
     runs-on: ubuntu-latest
@@ -64,6 +64,7 @@ jobs:
       - run: chmod +x ./build/Tests/Tests
 
       - name: Run Tests with Valgrind
+        if: ${{ env.RUN_MEMORY_CHECK == 'true' }}
         run: valgrind --tool=memcheck --leak-check=full --xml=yes --xml-file=unit_tests_valgrind.xml ./build/Tests/Tests >/dev/null 2>&1
 
       - name: Valgrind Memory check
