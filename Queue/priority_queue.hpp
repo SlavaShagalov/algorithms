@@ -20,20 +20,18 @@ class PriorityQueue {
   T top() const;
 };
 
-//template <typename T>
-//T PriorityQueue<T>::pop() {
-//  assert(_head != _tail);
-//  T result = _buffer[_head];
-//  _head = (_head + 1) % _size;
-//  return result;
-//}
+// template <typename T>
+// T PriorityQueue<T>::pop() {
+//   assert(_head != _tail);
+//   T result = _buffer[_head];
+//   _head = (_head + 1) % _size;
+//   return result;
+// }
 template <typename T>
 T PriorityQueue<T>::top() const {
   return nullptr;
 }
 template <typename T>
-void PriorityQueue<T>::push(const T &elem, void (*comparator)()) {
-
-}
+void PriorityQueue<T>::push(const T &elem, void (*comparator)()) {}
 
 #endif  // PRIORITY_QUEUE_HPP

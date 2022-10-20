@@ -1,8 +1,8 @@
 #ifndef QUICK_SORT_HPP
 #define QUICK_SORT_HPP
 
-#include <cstddef>
 #include <algorithm>
+#include <cstddef>
 
 void quickSort(int *arr, const int size);
 

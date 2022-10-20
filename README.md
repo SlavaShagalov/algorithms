@@ -19,3 +19,7 @@ genhtml -o report coverage.info
 ## Memory test
 
 valgrind --tool=memcheck --leak-check=yes ./a.out
+
+## Sanitizers
+
+g++ -fsanitize=address,undefined,leak -fno-sanitize-recover=all -fsanitize-undefined-trap-on-error -c <source>

@@ -3,8 +3,8 @@
 #include "bubble_sort.hpp"
 #include "dynamic_array.hpp"
 #include "heap.hpp"
-#include "queue.hpp"
 #include "priority_queue.hpp"
+#include "queue.hpp"
 #include "queue_using_stacks.hpp"
 #include "stack.hpp"
 
@@ -12,12 +12,12 @@ int main(int argc, char *argv[]) {
   (void)argc;
   (void)argv;
 
-  const int SIZE = 5;
-  int arr[SIZE] = {2, 5, 0, -4, 0};
+  const int size = 5;
+  int arr[size] = {2, 5, 0, -4, 0};
 
-  bubbleSort(arr, SIZE);
+  bubbleSort(arr, size);
 
-  for (int i = 0; i < SIZE; i++) {
+  for (int i = 0; i < size; i++) {
     std::cout << arr[i] << " ";
   }
 
