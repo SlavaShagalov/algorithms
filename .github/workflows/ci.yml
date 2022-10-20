@@ -21,7 +21,7 @@ jobs:
     container: leshiy1295/gcc_linters_valgrind_cmake_gtest
     steps:
       - name: Install lcov
-        run: apt install lcov
+        run: apt install lcov -y
 
       - uses: actions/checkout@v3
 
