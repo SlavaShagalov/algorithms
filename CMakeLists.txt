@@ -33,13 +33,15 @@ message("CMAKE_EXE_LINKER_FLAGS =${CMAKE_EXE_LINKER_FLAGS}")
 
 # headers
 set(Bit_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Bit/BitOperation)
-set(Sort_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Sort/BubbleSort)
+set(Sort_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Sort/BubbleSort
+        ${CMAKE_CURRENT_SOURCE_DIR}/Sort/MergeSort)
 set(Search_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Search)
 set(Arrays_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Arrays/Intersection)
 set(DynamicArray_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/DynamicArray)
 set(Stack_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Stack)
 set(Heap_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Heap)
 set(Queue_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Queue)
+set(Common_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR})
 
 # sources
 file(GLOB_RECURSE SOURCES
@@ -61,12 +63,14 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${PROJECT_BINARY_DIR}
         ${Sort_INCLUDE_DIRS}
         ${Bit_INCLUDE_DIRS}
-        ${Search_INCLUDE_DIRS}
+        ${Search_INCLUDE_DIRS}/BinarySearch
+        ${Search_INCLUDE_DIRS}/LinearSearch
         ${Arrays_INCLUDE_DIRS}
         ${DynamicArray_INCLUDE_DIRS}
         ${Stack_INCLUDE_DIRS}
         ${Heap_INCLUDE_DIRS}
         ${Queue_INCLUDE_DIRS}
+        ${Common_INCLUDE_DIRS}
         )
 
 # tests

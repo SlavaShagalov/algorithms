@@ -7,6 +7,8 @@
 #include "queue.hpp"
 #include "queue_using_stacks.hpp"
 #include "stack.hpp"
+#include "merge_sort.hpp"
+#include "binary_search.hpp"
 
 int main(int argc, char *argv[]) {
   (void)argc;
