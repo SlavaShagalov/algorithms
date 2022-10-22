@@ -41,6 +41,7 @@ set(DynamicArray_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/DynamicArray)
 set(Stack_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Stack)
 set(Heap_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Heap)
 set(Queue_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Queue)
+set(Different_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Different)
 set(Common_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR})
 
 # sources
@@ -70,6 +71,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${Stack_INCLUDE_DIRS}
         ${Heap_INCLUDE_DIRS}
         ${Queue_INCLUDE_DIRS}
+        ${Different_INCLUDE_DIRS}
         ${Common_INCLUDE_DIRS}
         )
 
