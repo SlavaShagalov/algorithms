@@ -93,8 +93,8 @@ ssize_t partition(T *arr, const ssize_t l, const ssize_t r,
 // }
 
 template <typename T, typename Comparator = DefaultComparator<T>>
-T kStatSearchNonRecursive(const T *arr, const ssize_t size, const ssize_t k,
-                          Comparator comp = Comparator()) {
+T kStatSearch(const T *arr, const ssize_t size, const ssize_t k,
+              Comparator comp = Comparator()) {
   assert(size > 0);
   assert(k >= 0 && k < size);
 

@@ -8,6 +8,6 @@
 
 void quickSort(int *arr, const int size);
 
-// void binaryMSD(uint64_t *arr, const size_t size) { assert(size > 0); }
+// void _binaryQuickSort(uint64_t *arr, const size_t size) { assert(size > 0); }
 
 #endif  // QUICK_SORT_HPP

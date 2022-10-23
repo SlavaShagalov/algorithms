@@ -9,6 +9,7 @@
 #include "queue.hpp"
 #include "queue_using_stacks.hpp"
 #include "stack.hpp"
+#include "binary_msd_sort.hpp"
 
 int main(int argc, char *argv[]) {
   (void)argc;

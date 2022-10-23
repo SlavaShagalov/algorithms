@@ -5,7 +5,7 @@
 #include <cassert>
 #include <cstddef>
 
-#include "../../types.h"
+#include "types.h"
 
 template <typename T, typename Comparator = DefaultComparator<T>>
 void bubbleSort(T *arr, const size_t size, Comparator comp = Comparator()) {

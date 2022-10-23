@@ -7,7 +7,7 @@ TEST(KStatSearch, OneElement) {
   const int arr[size] = {9};
   const ssize_t k = 0;
 
-  const int value = kStatSearchNonRecursive(arr, size, k);
+  const int value = kStatSearch(arr, size, k);
 
   EXPECT_EQ(value, 9);
 }
@@ -17,7 +17,7 @@ TEST(KStatSearch, TwoElements) {
   const int arr[size] = {9, 2};
   const ssize_t k = 1;
 
-  const int value = kStatSearchNonRecursive(arr, size, k);
+  const int value = kStatSearch(arr, size, k);
 
   EXPECT_EQ(value, 9);
 }
@@ -27,7 +27,7 @@ TEST(KStatSearch, FirstElement) {
   const int arr[size] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   const ssize_t k = 0;
 
-  const int value = kStatSearchNonRecursive(arr, size, k);
+  const int value = kStatSearch(arr, size, k);
 
   EXPECT_EQ(value, 1);
 }
@@ -37,7 +37,7 @@ TEST(KStatSearch, Persent10) {
   const int arr[size] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   const ssize_t k = 1;
 
-  const int value = kStatSearchNonRecursive(arr, size, k);
+  const int value = kStatSearch(arr, size, k);
 
   EXPECT_EQ(value, 2);
 }
@@ -47,7 +47,7 @@ TEST(KStatSearch, PersentMedianEvenSize) {
   const int arr[size] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   const ssize_t k = 5;
 
-  const int value = kStatSearchNonRecursive(arr, size, k);
+  const int value = kStatSearch(arr, size, k);
 
   EXPECT_EQ(value, 6);
 }
@@ -57,7 +57,7 @@ TEST(KStatSearch, PersentMedianOddSize) {
   const int arr[size] = {11, 2, 8, 4, 1, 6, 7, 3, 9, 10, 5};
   const ssize_t k = 5;
 
-  const int value = kStatSearchNonRecursive(arr, size, k);
+  const int value = kStatSearch(arr, size, k);
 
   EXPECT_EQ(value, 6);
 }
@@ -67,7 +67,7 @@ TEST(KStatSearch, Persent90) {
   const int arr[size] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   const ssize_t k = 9;
 
-  const int value = kStatSearchNonRecursive(arr, size, k);
+  const int value = kStatSearch(arr, size, k);
 
   EXPECT_EQ(value, 10);
 }

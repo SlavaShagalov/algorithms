@@ -34,7 +34,8 @@ message("CMAKE_EXE_LINKER_FLAGS =${CMAKE_EXE_LINKER_FLAGS}")
 # headers
 set(Bit_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Bit/BitOperation)
 set(Sort_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Sort/BubbleSort
-        ${CMAKE_CURRENT_SOURCE_DIR}/Sort/MergeSort)
+        ${CMAKE_CURRENT_SOURCE_DIR}/Sort/MergeSort
+        ${CMAKE_CURRENT_SOURCE_DIR}/Sort/BinaryMSDSort)
 set(Search_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Search)
 set(Arrays_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Arrays/Intersection)
 set(DynamicArray_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/DynamicArray)
