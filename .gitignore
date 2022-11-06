@@ -52,3 +52,4 @@ unit_tests_valgrind.xml
 
 # coverage
 coverage.info
+report
