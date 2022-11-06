@@ -12,13 +12,13 @@ env:
 jobs:
   static_analyze:
     runs-on: ubuntu-latest
-    container: slavashagalov/cpp-project:latest
+    container: slavashagalov/cpp-project:v2
     steps:
       - uses: actions/checkout@v3
       - run: ./run_linters.sh
   build:
     runs-on: ubuntu-latest
-    container: slavashagalov/cpp-project:latest
+    container: slavashagalov/cpp-project:v2
     steps:
       - uses: actions/checkout@v3
 
@@ -47,7 +47,7 @@ jobs:
           file: coverage.info
   check-memory:
     runs-on: ubuntu-latest
-    container: slavashagalov/cpp-project:latest
+    container: slavashagalov/cpp-project:v2
     needs: [ build ]
     steps:
       - uses: actions/checkout@v3
