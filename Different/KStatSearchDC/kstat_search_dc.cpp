@@ -2,7 +2,7 @@
 
 // Поиск K-ой порядковой статистики методом "Разделяй
 // и властвуй"
-//int kStatSearchDC(int* arr, const int size, const int k) {
+// int kStatSearchDC(int* arr, const int size, const int k) {
 //  int part = partition(arr, size);
 //
 //  if (part == k)

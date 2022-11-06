@@ -30,9 +30,15 @@ check_log "cppcheck . \
                     -I Bit/* \
                     -I DynamicArray \
                     -I Queue \
-                    -I Search/* \
-                    -I Sort/* \
+                    -I Search/LinearSearch \
+                    -I Search/BinarySearch \
+                    -I Sort/QuickSort \
+                    -I Sort/BubbleSort \
+                    -I Sort/MergeSort \
+                    -I Sort/BinaryMSDSort \
+                    -I Heap \
                     -I Stack \
+                    -I Different/KStatSearchDC \
                     -I . \
                     --config-exclude=cmake-build-debug \
                     -i cmake-build-debug \
@@ -61,8 +67,14 @@ check_log "clang-tidy ./*.cpp \
                       -p cmake-build-debug/compile_commands.json -- \
                       -I. \
                       -I Stack \
-                      -I DynamicArray
-                      -I Queue
-                      -I Sort/*" "Error (?:reading|while processing)"
+                      -I Heap \
+                      -I DynamicArray \
+                      -I Queue \
+                      -I Sort \
+                      -I Sort/BinaryMSDSort \
+                      -I Sort/BubbleSort \
+                      -I Sort/MergeSort \
+                      -I Search \
+                      -I Search/BinarySearch" "Error (?:reading|while processing)"
 
 print_header "SUCCESS"

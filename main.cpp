@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "binary_msd_sort.hpp"
 #include "binary_search.hpp"
 #include "bubble_sort.hpp"
 #include "dynamic_array.hpp"
@@ -9,7 +10,6 @@
 #include "queue.hpp"
 #include "queue_using_stacks.hpp"
 #include "stack.hpp"
-#include "binary_msd_sort.hpp"
 
 int main(int argc, char *argv[]) {
   (void)argc;

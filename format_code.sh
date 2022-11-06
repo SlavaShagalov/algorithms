@@ -9,4 +9,5 @@ clang-format -i --verbose -style=file:".clang-format" \
   Search/*/* \
   Sort/*/* \
   Stack/* \
-  Heap/*
+  Heap/* \
+  Different/*/*
