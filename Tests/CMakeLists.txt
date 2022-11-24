@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 project(Tests)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
 # sources
 file(GLOB SOURCES
@@ -26,6 +26,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${Arrays_INCLUDE_DIRS}
         ${Different_INCLUDE_DIRS}/KStatSearchDC
         ${Common_INCLUDE_DIRS}
+        ${HASHMAP_INCLUDE_DIR}
         )
 message(${Different_INCLUDE_DIRS}/KStatSearchDC)
 target_link_libraries(${PROJECT_NAME} GTest::gtest_main)

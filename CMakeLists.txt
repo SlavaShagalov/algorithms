@@ -9,14 +9,14 @@ set(RELEASE OFF)
 option(SANITIZER "Sanitizer")
 set(SANITIZER ON)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # compiler and linker setup
 if (DEBUG)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -DDEBUG")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wpedantic -Wextra -Werror")
+#    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wpedantic -Wextra -Werror")
 
     if (SANITIZER)
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address,undefined,leak -fno-sanitize-recover=all -fsanitize-undefined-trap-on-error")
@@ -44,6 +44,7 @@ set(Heap_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Heap)
 set(Queue_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Queue)
 set(Different_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/Different)
 set(Common_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR})
+set(HASHMAP_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/HashMap)
 
 # sources
 file(GLOB_RECURSE SOURCES
@@ -74,6 +75,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${Queue_INCLUDE_DIRS}
         ${Different_INCLUDE_DIRS}
         ${Common_INCLUDE_DIRS}
+        ${HASHMAP_INCLUDE_DIR}
         )
 
 # tests
